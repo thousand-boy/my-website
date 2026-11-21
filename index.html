@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuya Matsumoto | Aspiring Python Backend Engineer</title>
+  <meta name="description" content="Pythonバックエンドエンジニアを目指すYuya Matsumotoのポートフォリオです。作業療法士としての経験と、Pythonによる勤務表作成支援ツールの個人開発を紹介しています。">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-logo" href="#top">Yuya Matsumoto</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="メイン">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-role">Aspiring Python Backend Engineer</p>
+        <h1 class="hero-name">Yuya Matsumoto</h1>
+        <p class="hero-tagline">Building practical solutions through Python and technology.</p>
+        <p class="hero-lead">
+          作業療法士として約6年半、病院で勤務してきました。現在はPythonを中心にバックエンド開発を学び、業務の課題を仕組みで解決することを目指して、勤務表作成支援ツールを個人開発しています。
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">View Projects</a>
+          <a class="button button-secondary" href="https://github.com/thousand-boy" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT（最初の画面に入るため、表示アニメーションは付けない） -->
+    <section id="about" class="section">
+      <div class="container section-inner">
+        <h2 class="section-title"><span class="section-number" aria-hidden="true">01</span>About</h2>
+        <div class="section-body">
+          <p>
+            作業療法士として約6年半、回復期・急性期の病院に勤務しています（2026年12月退職予定）。
+          </p>
+          <p>
+            回復期病院では、スタッフへの聞き取りをもとに作成したExcelのチェックリストが定着し、書類の確認漏れが減りました。一方で、業務の流れに合わずに使われなくなるツールも見てきました。この経験から、仕組みを自分で作り、直し、使われる状態まで持っていく側に回りたいと考え、エンジニアを目指しています。
+          </p>
+          <p>
+            2026年2月からPythonを独学しています。教材で基礎を学んだうえで、身近な業務を題材に勤務表作成支援ツールを個人開発しました。基本情報技術者試験の学習を通して、データベースやネットワークなどの基礎も固めています。
+          </p>
+          <p>
+            まずはPythonバックエンドの実務で、担当する処理の実装・テスト・改善を確実に担えるようになることが目標です。将来は、情報整理や言語化を支えるAIアプリケーションを、使う人の判断と意図を尊重する形で開発したいと考えています。
+          </p>
+          <dl class="profile-list">
+            <div class="profile-item">
+              <dt>関心のある分野</dt>
+              <dd>Pythonバックエンド開発、API・データベース設計、業務自動化、LLMを活用した業務支援</dd>
+            </div>
+            <div class="profile-item">
+              <dt>希望勤務地</dt>
+              <dd>福岡県</dd>
+            </div>
+            <div class="profile-item">
+              <dt>入社可能時期</dt>
+              <dd>2027年1月</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container section-inner">
+        <h2 class="section-title"><span class="section-number" aria-hidden="true">02</span>Skills</h2>
+        <div class="section-body reveal">
+          <p class="section-intro">
+            エンジニアとしての実務経験はありません。スキルの程度を数値で示す代わりに、使った場面ごとに分けて記載しています。
+          </p>
+          <div class="skill-groups">
+            <div class="skill-group">
+              <h3 class="skill-group-title">個人開発で使用</h3>
+              <p class="skill-group-note">勤務表作成支援ツールで使用</p>
+              <ul class="tag-list">
+                <li class="tag">Python</li>
+                <li class="tag">OR-Tools（CP-SAT）</li>
+                <li class="tag">openpyxl</li>
+                <li class="tag">pytest</li>
+                <li class="tag">Git / GitHub</li>
+                <li class="tag">GitHub Actions</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">教材で学習</h3>
+              <p class="skill-group-note">書籍で基礎を学び、このサイトの制作に使用</p>
+              <ul class="tag-list">
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group-title">今後学ぶ予定</h3>
+              <p class="skill-group-note">SQLは基本情報技術者試験の学習で基礎概念に触れた段階です</p>
+              <ul class="tag-list">
+                <li class="tag tag-planned">FastAPI</li>
+                <li class="tag tag-planned">SQL / データベース</li>
+                <li class="tag tag-planned">REST API</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-link">
+            Pythonの基礎学習の記録：
+            <a href="https://github.com/thousand-boy/python-learning" target="_blank" rel="noopener">python-learning</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container section-inner">
+        <h2 class="section-title"><span class="section-number" aria-hidden="true">03</span>Projects</h2>
+        <div class="section-body">
+          <article class="project project-featured reveal">
+            <p class="project-label">Project 01 / 個人開発・試作品</p>
+            <h3 class="project-title">勤務表作成支援ツール</h3>
+            <p class="project-summary">
+              Excelに入力した職員情報と勤務希望から、休日数・病棟の人数・職種・連続勤務を考慮した勤務表の下書きを作るPythonのツールです。
+            </p>
+            <ul class="tag-list project-tags">
+              <li class="tag">Python 3.14</li>
+              <li class="tag">OR-Tools（CP-SAT）</li>
+              <li class="tag">openpyxl</li>
+              <li class="tag">pytest</li>
+              <li class="tag">GitHub Actions</li>
+            </ul>
+
+            <h4>解決したい課題</h4>
+            <p>
+              希望休を1つ反映すると、別の日の人数や他の職員の連勤にも影響します。複数の条件を行き来しながら手作業で調整する負担を減らすことが目的です。
+            </p>
+
+            <h4>主な機能</h4>
+            <ul class="bullet-list">
+              <li>理由を付けて入力した希望・予定は変更せずに残す</li>
+              <li>公休数と年休を合わせた必要休日数を、0.5日単位でちょうど割り当てる</li>
+              <li>日曜日は各病棟ちょうど2名の出勤にする</li>
+              <li>病棟の人数や役割の目安は「できるだけ満たす条件」として扱い、満たせなかった条件を表示する</li>
+              <li>職員マスタと照合し、追加された職員の行をExcelに自動で追加する</li>
+            </ul>
+
+            <h4>実装の工夫</h4>
+            <ul class="bullet-list">
+              <li>勤務ルールを「必ず守る」「できるだけ満たす」「人が判断する」の3種類に整理してからコードにした</li>
+              <li>OR-Tools（CP-SAT）で、重要な条件ほど優先されるよう評価の重みを設計し、テストで確認した</li>
+              <li>openpyxlの行挿入では補正されない数式の参照・結合セル・入力規則を補正する処理を実装した</li>
+              <li>一時ファイルに保存して再読み込みし、検証を通った場合だけ出力を置き換える（失敗時は前回の出力を残す）</li>
+              <li>1つのファイルにまとまっていた処理を、読み込み・検証・最適化・出力などの役割別モジュールに分割した</li>
+            </ul>
+
+            <h4>テスト</h4>
+            <p>
+              pytestで99件（統合テスト2件を含む、2026年9月28日時点）。GitHub Actionsでpush時に自動実行しています。
+            </p>
+
+            <p class="project-note">
+              条件と動作を検証するための試作品です。出力は担当者が確認・調整して使う前提で、現場での継続運用や時間削減の効果は検証していません。
+            </p>
+
+            <div class="project-links">
+              <a class="button button-primary" href="https://github.com/thousand-boy/kinmu-automation" target="_blank" rel="noopener">GitHubでコードを見る</a>
+              <a class="button button-secondary" href="https://github.com/thousand-boy/kinmu-automation#readme" target="_blank" rel="noopener">READMEを読む</a>
+            </div>
+          </article>
+
+          <div class="project-grid">
+            <article class="project reveal">
+              <p class="project-label">Project 02 / 学習記録</p>
+              <h3 class="project-title">HTML / CSS Learning</h3>
+              <p>
+                書籍『1冊ですべて身につくHTML &amp; CSSとWebデザイン入門講座［第2版］』とProgateで学習しました（2026年6〜7月）。
+              </p>
+              <ul class="bullet-list">
+                <li>HTMLの基本（見出し・リスト・表・フォーム）</li>
+                <li>Flexbox・CSS Gridによるレイアウト</li>
+                <li>モバイルファーストのレスポンシブ対応</li>
+              </ul>
+            </article>
+
+            <article class="project reveal">
+              <p class="project-label">Project 03 / 学習記録</p>
+              <h3 class="project-title">JavaScript Learning</h3>
+              <p>
+                書籍『1冊ですべて身につくJavaScript入門講座』の第1〜7章を学習しました（2026年7〜8月）。
+              </p>
+              <ul class="bullet-list">
+                <li>DOM操作とイベント処理</li>
+                <li>配列・オブジェクトを使った表示</li>
+                <li>Intersection Observerを使ったスクロール連動の表示</li>
+                <li>教材の範囲外の動きはMDNで確認してノートに補足</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container section-inner">
+        <h2 class="section-title"><span class="section-number" aria-hidden="true">04</span>Experience</h2>
+        <div class="section-body reveal">
+          <h3 class="experience-title">作業療法士</h3>
+          <p class="experience-meta">回復期・急性期の病院 ／ 約6年半（2026年12月退職予定）</p>
+          <ul class="bullet-list experience-list">
+            <li>回復期病院で、スタッフへの聞き取りをもとにExcelのチェックリストと評価記録のテンプレートを作成しました。リハビリスタッフ30名全員が閲覧・記入できる形と定期確認の運用を整え、書類の確認漏れを月約50件から7〜8件に減らしました。</li>
+            <li>急性期病院では6病棟を担当し、患者さまの状態や退院に向けた課題から介入の順序を判断してきました。</li>
+            <li>医師・看護師などの多職種と支援方針をすり合わせ、患者さまやご家族への説明・指導を行ってきました。</li>
+            <li>スタッフのカルテ記録を確認し、表現の修正や代替案を提案してきました。</li>
+          </ul>
+
+          <h3 class="subheading">開発に活かせること</h3>
+          <div class="strength-grid">
+            <div class="strength">
+              <h4>課題を見つけ、条件を整理する</h4>
+              <p>現場の声から問題点を見つけ、使われ続ける形を考えてきた経験を、要件の整理に活かします。</p>
+            </div>
+            <div class="strength">
+              <h4>確認漏れを仕組みで防ぐ</h4>
+              <p>チェックリストで確認漏れを減らした考え方を、入力の検証やテストに活かします。</p>
+            </div>
+            <div class="strength">
+              <h4>相手に伝わる形で説明する</h4>
+              <p>多職種や患者さまに説明してきた経験を、READMEやチーム内での共有に活かします。</p>
+            </div>
+            <div class="strength">
+              <h4>優先順位を判断する</h4>
+              <p>複数の状況から対応の順序を決めてきた経験を、タスクの進め方に活かします。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container section-inner">
+        <h2 class="section-title"><span class="section-number" aria-hidden="true">05</span>Contact</h2>
+        <div class="section-body reveal">
+          <p>お問い合わせはメールでお願いいたします。</p>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Email</span>
+              <a href="mailto:work.inside1210@gmail.com">work.inside1210@gmail.com</a>
+            </li>
+            <li>
+              <span class="contact-label">GitHub</span>
+              <a href="https://github.com/thousand-boy" target="_blank" rel="noopener">github.com/thousand-boy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-name">Yuya Matsumoto</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/thousand-boy" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/thousand-boy/portfolio" target="_blank" rel="noopener">このサイトのソースコード</a></li>
+      </ul>
+      <p class="copyright"><small>&copy; 2026 Yuya Matsumoto</small></p>
+    </div>
+  </footer>
+</body>
+</html>

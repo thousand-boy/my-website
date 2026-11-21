@@ -1,0 +1,595 @@
+/* ========================================
+   変数と基本設定
+   スマートフォン向けのスタイルを基本にし、
+   画面が広いときの違いだけを min-width のメディアクエリで追加する
+   ======================================== */
+:root {
+  --color-text: #111111;
+  --color-text-muted: #555555;
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f5f5f5;
+  --color-border: #dddddd;
+
+  --font-base: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+
+  --header-height: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* 固定ヘッダーの高さ分だけ、リンク先の位置を下げる */
+  scroll-padding-top: var(--header-height);
+}
+
+/* 動きを減らす設定をしていないときだけ、スムーズスクロールにする */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   ヘッダー・ナビゲーション
+   ======================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 24px;
+  min-height: var(--header-height);
+}
+
+.site-logo {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.menu-button {
+  display: none;
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  background-color: transparent;
+  border: 1px solid var(--color-text);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* JavaScriptが無効なときは、リンクを横に並べて折り返す */
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px;
+  padding-bottom: 8px;
+}
+
+.nav-list a {
+  display: block;
+  padding: 4px 0;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+}
+
+/* スマートフォン幅でJavaScriptが有効なときは、ボタンで開閉するパネルにする */
+@media (max-width: 767px) {
+  .js .menu-button {
+    display: block;
+  }
+
+  .js .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg);
+    /* パネルがヘッダーの下線に重なるため、上にも線を引く */
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .js .site-header.is-menu-open .site-nav {
+    display: block;
+  }
+
+  .js .nav-list {
+    flex-direction: column;
+    padding: 8px 20px 16px;
+  }
+
+  .js .nav-list a {
+    padding: 12px 0;
+  }
+}
+
+/* ========================================
+   共通パーツ
+   ======================================== */
+.button {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--color-text);
+  border-radius: 999px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.button-primary {
+  color: var(--color-bg);
+  background-color: var(--color-text);
+}
+
+.button-primary:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.button-secondary {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.button-secondary:hover {
+  color: var(--color-bg);
+  background-color: var(--color-text);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-text);
+  border-radius: 4px;
+}
+
+/* 今後学ぶ予定の技術は、色だけでなく破線でも区別する */
+.tag-planned {
+  color: var(--color-text-muted);
+  border-style: dashed;
+  border-color: var(--color-text-muted);
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 1.2em;
+}
+
+.bullet-list li + li {
+  margin-top: 6px;
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.9em;
+  left: 0;
+  width: 6px;
+  height: 1px;
+  background-color: var(--color-text);
+}
+
+/* ========================================
+   HERO
+   ======================================== */
+.hero {
+  padding: 72px 0 64px;
+}
+
+.hero-role {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.hero-name {
+  margin-top: 12px;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+  margin-top: 24px;
+  font-size: clamp(1.125rem, 2.4vw, 1.5rem);
+  line-height: 1.5;
+}
+
+.hero-lead {
+  max-width: 40em;
+  margin-top: 24px;
+  color: var(--color-text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+/* ========================================
+   セクション共通
+   ======================================== */
+.section {
+  padding: 64px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-inner {
+  display: grid;
+  gap: 24px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.section-number {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.section-body > p + p {
+  margin-top: 1em;
+}
+
+.section-intro {
+  color: var(--color-text-muted);
+}
+
+.subheading {
+  margin-top: 48px;
+  font-size: 1.125rem;
+}
+
+.text-link {
+  margin-top: 32px;
+}
+
+/* ========================================
+   ABOUT
+   ======================================== */
+.profile-list {
+  margin-top: 40px;
+  border-top: 1px solid var(--color-border);
+}
+
+.profile-item {
+  display: grid;
+  gap: 4px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-item dt {
+  font-weight: 700;
+}
+
+/* ========================================
+   SKILLS
+   ======================================== */
+.skill-groups {
+  display: grid;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.skill-group-title {
+  font-size: 1.0625rem;
+}
+
+.skill-group-note {
+  margin: 4px 0 12px;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* ========================================
+   PROJECTS
+   ======================================== */
+.project {
+  padding: 24px 20px;
+  border: 1px solid var(--color-border);
+}
+
+.project-featured {
+  border-color: var(--color-text);
+}
+
+.project-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.project-title {
+  margin-top: 8px;
+  font-size: 1.375rem;
+  line-height: 1.4;
+}
+
+.project-featured .project-title {
+  font-size: 1.75rem;
+}
+
+.project-summary {
+  margin-top: 16px;
+}
+
+.project-tags {
+  margin-top: 20px;
+}
+
+.project-featured h4 {
+  margin: 32px 0 8px;
+  font-size: 1rem;
+}
+
+.project-note {
+  margin-top: 32px;
+  padding: 16px 20px;
+  font-size: 0.9375rem;
+  background-color: var(--color-bg-subtle);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.project-grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.project-grid .project p {
+  margin: 12px 0 16px;
+}
+
+/* ========================================
+   EXPERIENCE
+   ======================================== */
+.experience-title {
+  font-size: 1.25rem;
+}
+
+.experience-meta {
+  color: var(--color-text-muted);
+}
+
+.experience-list {
+  margin-top: 20px;
+}
+
+.strength-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.strength {
+  padding: 24px;
+  background-color: var(--color-bg-subtle);
+}
+
+.strength h4 {
+  font-size: 1rem;
+}
+
+.strength p {
+  margin-top: 8px;
+  font-size: 0.9375rem;
+}
+
+/* ========================================
+   CONTACT
+   ======================================== */
+.contact-list {
+  margin-top: 24px;
+}
+
+.contact-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-label {
+  font-weight: 700;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.site-footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-name {
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  font-size: 0.875rem;
+}
+
+.footer-links a {
+  display: inline-block;
+  padding: 4px 0;
+}
+
+.copyright {
+  width: 100%;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* ========================================
+   スクロール表示（JavaScriptが有効なときだけ隠しておく）
+   ======================================== */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ========================================
+   タブレット以上（768px〜）
+   ======================================== */
+@media (min-width: 768px) {
+  .nav-list {
+    gap: 32px;
+    padding-bottom: 0;
+  }
+
+  .hero {
+    padding: 120px 0 112px;
+  }
+
+  .section {
+    padding: 96px 0;
+  }
+
+  .profile-item {
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+  }
+
+  .project {
+    padding: 32px;
+  }
+
+  .project-grid,
+  .strength-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .strength-grid {
+    gap: 24px;
+  }
+
+  .contact-list li {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .contact-label {
+    width: 80px;
+  }
+}
+
+/* ========================================
+   PC（1024px〜）：見出しを左、本文を右に並べる
+   ======================================== */
+@media (min-width: 1024px) {
+  .section-inner {
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+  }
+}
