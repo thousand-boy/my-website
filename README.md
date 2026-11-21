@@ -3,7 +3,7 @@
 Pythonバックエンドエンジニアを目指すYuya Matsumotoのポートフォリオサイトです。
 経歴・学習内容・個人開発の成果物を、1ページで確認できるようにまとめています。
 
-- 公開URL：https://thousand-boy.github.io/portfolio/
+- 公開URL：https://thousand-boy.github.io/my-website/
 - GitHub：https://github.com/thousand-boy
 
 ## 使用技術
@@ -20,7 +20,7 @@ Pythonバックエンドエンジニアを目指すYuya Matsumotoのポートフ
 ## ファイル構成
 
 ```text
-portfolio/
+my-website/
 ├── index.html      # ページ本体（1ページ構成）
 ├── css/
 │   └── style.css   # レイアウトとデザイン
